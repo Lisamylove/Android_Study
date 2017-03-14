@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="8">
+
+        <ImageView
+            android:id="@+id/iv_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/bb"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/iv_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/c"
+            android:layout_weight="1" />
+        <ImageView
+        android:id="@+id/iv_three"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/a"
+        android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8">
+
+        <RadioGroup
+            android:id="@+id/bt_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/bt_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="#ff0000"
+                android:text="首页"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/bt_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="视频"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/bt_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="关注"
+                android:textSize="15dp" />
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

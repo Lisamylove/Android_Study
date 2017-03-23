@@ -11,12 +11,12 @@ import java.util.ArrayList;
  * 2: @time 2017/3/14 10:56
  */
 public class MyAdapter extends FragmentPagerAdapter{
-    private ArrayList<String> titles;
+    private ArrayList<String> titl;
     private ArrayList<Fragment> fragments;
 
     public MyAdapter(FragmentManager fm, ArrayList<String> titles, ArrayList<Fragment> fragments) {
         super(fm);
-        this.titles = titles;
+        this.titl = titles;
         this.fragments = fragments;
     }
 
@@ -32,6 +32,6 @@ public class MyAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return titles.get(position);
+        return titl.get(position);
     }
 }

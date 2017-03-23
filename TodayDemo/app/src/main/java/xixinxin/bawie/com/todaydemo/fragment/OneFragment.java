@@ -39,7 +39,7 @@ public class OneFragment extends Fragment implements View.OnClickListener {
         //设置侧滑方向
         slidingMenu.setMode(SlidingMenu.LEFT);
         //设置侧滑宽度
-        slidingMenu.setBehindOffset(100);
+        slidingMenu.setBehindOffset(80);
         //设置让侧滑依附于activity之上
         slidingMenu.attachToActivity(getActivity(), SlidingMenu.SLIDING_CONTENT);
         //设置侧滑布局

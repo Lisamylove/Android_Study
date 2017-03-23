@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 import xixinxin.bawie.com.todaydemo.R;
 import xixinxin.bawie.com.todaydemo.adapter.MyAdapter;
+import xixinxin.bawie.com.todaydemo.bean.Home;
+import xixinxin.bawie.com.todaydemo.utils.HomeList;
 
 /**
  * 1: @author 席鑫鑫
@@ -36,51 +38,22 @@ public class NewFragment extends Fragment {
     private void initView(View view) {
         tab = (TabLayout) view.findViewById(R.id.tab);
         vp = (ViewPager) view.findViewById(R.id.vp);
-        titles.add("推荐");
-        titles.add("热点");
-        titles.add("北京");
-        titles.add("社会");
-        titles.add("娱乐");
-        titles.add("问答");
-        titles.add("图片");
-        titles.add("科技");
-        titles.add("汽车");
-        titles.add("体育");
-        TuijianFragment tuijian = new TuijianFragment();
-        fragments.add(tuijian);
-        RedianFragment redian = new RedianFragment();
-        fragments.add(redian);
-        BeijingFragment beijing = new BeijingFragment();
-        fragments.add(beijing);
-        ShehuiFragment shehui = new ShehuiFragment();
-        fragments.add(shehui);
-        YuleFragment yule = new YuleFragment();
-        fragments.add(yule);
-        WendaFragment wenda = new WendaFragment();
-        fragments.add(wenda);
-        TupianFragment tupian = new TupianFragment();
-        fragments.add(tupian);
-        KejiFragment keji = new KejiFragment();
-        fragments.add(keji);
-        QicheFragment qiche = new QicheFragment();
-        fragments.add(qiche);
-        TiyuFragment tiiyu = new TiyuFragment();
-        fragments.add(tiiyu);
+        ArrayList<Home> title = HomeList.getList();
+        for (int i = 0; i < title.size(); i++) {
+            titles.add(title.get(i).getName());
+        }
+        for (int i = 0; i < title.size(); i++) {
+            TuijianFragment fragment = new TuijianFragment(title.get(i).getUrl());
+            fragments.add(fragment);
+        }
         //设置tablayout模式
         tab.setTabMode(TabLayout.MODE_SCROLLABLE);
         //添加tab标签
-        tab.addTab(tab.newTab().setText(titles.get(0)));
-        tab.addTab(tab.newTab().setText(titles.get(1)));
-        tab.addTab(tab.newTab().setText(titles.get(2)));
-        tab.addTab(tab.newTab().setText(titles.get(3)));
-        tab.addTab(tab.newTab().setText(titles.get(4)));
-        tab.addTab(tab.newTab().setText(titles.get(5)));
-        tab.addTab(tab.newTab().setText(titles.get(6)));
-        tab.addTab(tab.newTab().setText(titles.get(7)));
-        tab.addTab(tab.newTab().setText(titles.get(8)));
-        tab.addTab(tab.newTab().setText(titles.get(9)));
+        for (String str : titles) {
+            tab.addTab(tab.newTab().setText(str));
+        }
         //创建适配器
-        MyAdapter adapter=new MyAdapter(getActivity().getSupportFragmentManager(),titles,fragments);
+        MyAdapter adapter = new MyAdapter(getActivity().getSupportFragmentManager(), titles, fragments);
         vp.setAdapter(adapter);
         //将tablayout与viewpager相关联
         tab.setupWithViewPager(vp);
